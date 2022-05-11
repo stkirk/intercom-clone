@@ -1,7 +1,12 @@
 import React from "react";
+import ChatMessageEngine from "./ChatMessageEngine";
 
 const SupportChatBot = () => {
-  return <div className="chatContainer">chat window</div>;
+  return (
+    <div className="chatContainer">
+      <ChatMessageEngine />
+    </div>
+  );
 };
 
 export default SupportChatBot;
