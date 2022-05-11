@@ -1,5 +1,5 @@
 import "./App.css";
-import SupportChatBot from "./components/SupportChatBot";
+import { SupportChatBot } from "./components/SupportChatBot";
 
 function App() {
   return (
