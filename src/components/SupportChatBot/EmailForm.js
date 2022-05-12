@@ -1,8 +1,8 @@
 import React from "react";
 
-const EmailForm = ({ userSelectionHandler, customerData }) => {
-  const onSubmit = () => {
-    console.log("submitted!!!");
+const EmailForm = ({ userSelectionHandler, customerData, submitHandler }) => {
+  const onSubmitHelper = (e) => {
+    submitHandler(e);
   };
 
   const onChangeHelper = (e) => {
@@ -11,7 +11,7 @@ const EmailForm = ({ userSelectionHandler, customerData }) => {
 
   return (
     <div className="emailForm">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmitHelper}>
         <input
           type="email"
           name="email"

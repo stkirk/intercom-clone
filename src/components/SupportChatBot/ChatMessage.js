@@ -2,7 +2,12 @@ import React from "react";
 import EmailForm from "./EmailForm";
 import UserResponse from "./UserResponse";
 
-const ChatMessage = ({ message, userSelectionHandler, customerData }) => {
+const ChatMessage = ({
+  message,
+  userSelectionHandler,
+  customerData,
+  submitHandler,
+}) => {
   return (
     <div>
       <p className="botMessage">{message.text}</p>
@@ -18,6 +23,7 @@ const ChatMessage = ({ message, userSelectionHandler, customerData }) => {
         <EmailForm
           userSelectionHandler={userSelectionHandler}
           customerData={customerData}
+          submitHandler={submitHandler}
         />
       )}
     </div>
