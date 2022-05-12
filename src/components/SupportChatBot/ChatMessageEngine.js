@@ -19,8 +19,14 @@ const ChatMessageEngine = () => {
   const initialMessage = messageData.initialMessage;
   const [chatMessages, setChatMessages] = useState([initialMessage]);
 
-  const userSelectionHandler = (event) => {
-    console.log(event.target.name, event.target.value);
+  const userSelectionHandler = (event, nextMessage) => {
+    // update customer data
+    setCustomerData({
+      ...customerData,
+      [event.target.name]: event.target.value,
+    });
+    // add next message to chatMessages array, nextMessage is a string representing a key in messageData
+    setChatMessages([...chatMessages, messageData[nextMessage]]);
   };
 
   return (

@@ -4,7 +4,7 @@ const UserResponse = ({ option, userSelectionHandler }) => {
   const [selected, setSelected] = useState(false);
   const selectionHelper = (e) => {
     setSelected(true);
-    userSelectionHandler(e);
+    userSelectionHandler(e, option.nextMessage);
   };
 
   return (
