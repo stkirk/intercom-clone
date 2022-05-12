@@ -25,8 +25,11 @@ const ChatMessageEngine = () => {
       ...customerData,
       [event.target.name]: event.target.value,
     });
-    // add next message to chatMessages array, nextMessage is a string representing a key in messageData
-    setChatMessages([...chatMessages, messageData[nextMessage]]);
+    // add next message to chatMessages array if it exists, nextMessage is a string representing a key in messageData
+    // if it doesn't exist, this will just handle the email input onChange
+    if (nextMessage) {
+      setChatMessages([...chatMessages, messageData[nextMessage]]);
+    }
   };
 
   return (
@@ -36,6 +39,7 @@ const ChatMessageEngine = () => {
           key={message.messageId}
           message={message}
           userSelectionHandler={userSelectionHandler}
+          customerData={customerData}
         />
       ))}
     </div>
