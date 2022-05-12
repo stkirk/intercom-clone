@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 
-const UserResponse = ({ option, userSelectionHandler }) => {
+const UserResponse = ({
+  option,
+  userSelectionHandler,
+  disableResponses,
+  setDisableResponses,
+}) => {
   const [selected, setSelected] = useState(false);
   const selectionHelper = (e) => {
     setSelected(true);
+    setDisableResponses(true);
     userSelectionHandler(e, option.nextMessage);
   };
 
@@ -14,6 +20,7 @@ const UserResponse = ({ option, userSelectionHandler }) => {
       name={option.name}
       value={option.value}
       onClick={selectionHelper}
+      disabled={disableResponses}
     >
       {option.text}
     </button>

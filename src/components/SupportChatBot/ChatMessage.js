@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import EmailForm from "./EmailForm";
 import UserResponse from "./UserResponse";
 
@@ -8,6 +8,8 @@ const ChatMessage = ({
   customerData,
   submitHandler,
 }) => {
+  const [disableResponses, setDisableResponses] = useState(false);
+
   return (
     <div>
       <p className="botMessage">{message.text}</p>
@@ -17,6 +19,8 @@ const ChatMessage = ({
             key={option.text}
             option={option}
             userSelectionHandler={userSelectionHandler}
+            disableResponses={disableResponses}
+            setDisableResponses={setDisableResponses}
           />
         ))}
       {message.inputEmail && (
