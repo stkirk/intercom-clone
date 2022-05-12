@@ -19,10 +19,18 @@ const ChatMessageEngine = () => {
   const initialMessage = messageData.initialMessage;
   const [chatMessages, setChatMessages] = useState([initialMessage]);
 
+  const userSelectionHandler = (event) => {
+    console.log(event.target.name, event.target.value);
+  };
+
   return (
     <div>
       {chatMessages.map((message) => (
-        <ChatMessage key={message.messageId} message={message} />
+        <ChatMessage
+          key={message.messageId}
+          message={message}
+          userSelectionHandler={userSelectionHandler}
+        />
       ))}
     </div>
   );

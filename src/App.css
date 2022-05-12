@@ -10,3 +10,18 @@
   overflow: hidden;
   box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.33);
 }
+
+/* user reponse buttons */
+.userResponse {
+  width: 20%;
+  height: 100px;
+  background-color: aliceblue;
+  border-radius: 7px;
+  border: 2px solid #7a39e0;
+}
+
+.selected {
+  background-color: #7a39e0;
+  border: 2px solid aliceblue;
+  color: aliceblue;
+}

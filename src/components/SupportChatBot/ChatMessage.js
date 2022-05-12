@@ -1,22 +1,16 @@
 import React from "react";
+import UserResponse from "./UserResponse";
 
-const ChatMessage = ({ message }) => {
-  const handleSelection = (e) => {
-    console.log(e.target.name, e.target.value);
-  };
+const ChatMessage = ({ message, userSelectionHandler }) => {
   return (
     <div>
       <p className="botMessage">{message.text}</p>
       {message.responseOptions.map((option) => (
-        <button
+        <UserResponse
           key={option.text}
-          className="userResponse"
-          name={option.name}
-          value={option.value}
-          onClick={handleSelection}
-        >
-          {option.text}
-        </button>
+          option={option}
+          userSelectionHandler={userSelectionHandler}
+        />
       ))}
     </div>
   );
