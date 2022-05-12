@@ -4,7 +4,8 @@ import ChatMessage from "./ChatMessage";
 import { messageData } from "../../data/supportChatMessageData";
 
 const ChatMessageEngine = () => {
-  // customer data to send to back end for referral
+  const [submitted, setSubmitted] = useState(false);
+  // customer data state to send on submission of email
   const initialCustomerData = {
     email: "",
     justBrowsing: false,
@@ -13,7 +14,6 @@ const ChatMessageEngine = () => {
     customerRole: null,
     companySize: null,
   };
-  // customer data state
   const [customerData, setCustomerData] = useState(initialCustomerData);
 
   // chat message flow data controls
@@ -40,20 +40,27 @@ const ChatMessageEngine = () => {
       console.log("request successful!", res.data);
       setCustomerData(initialCustomerData);
       setChatMessages([initialMessage]);
+      setSubmitted(true);
     });
   };
 
   return (
     <div>
-      {chatMessages.map((message) => (
-        <ChatMessage
-          key={message.messageId}
-          message={message}
-          userSelectionHandler={userSelectionHandler}
-          customerData={customerData}
-          submitHandler={submitHandler}
-        />
-      ))}
+      {!submitted &&
+        chatMessages.map((message) => (
+          <ChatMessage
+            key={message.messageId}
+            message={message}
+            userSelectionHandler={userSelectionHandler}
+            customerData={customerData}
+            submitHandler={submitHandler}
+          />
+        ))}
+      {submitted && (
+        <h2>
+          Thank you for reaching out, our team will get back to you shortly!
+        </h2>
+      )}
     </div>
   );
 };
