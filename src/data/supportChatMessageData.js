@@ -10,7 +10,7 @@ export const messageData = {
     text: "Hi! What can I help you with today?",
     responseOptions: [
       {
-        name: "browsing",
+        name: "justBrowsing",
         value: true,
         text: "Just browsing",
         nextMessage: "a1",
