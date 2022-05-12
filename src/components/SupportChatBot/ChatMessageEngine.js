@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import ChatMessage from "./ChatMessage";
 import { messageData } from "../../data/supportChatMessageData";
@@ -44,6 +44,15 @@ const ChatMessageEngine = () => {
     });
   };
 
+  // auto-scroll to bottom of chat window upon update of chatMessages
+  const lastMessageRef = useRef(null);
+  //   const scrollToBottom = () => {
+  //       lastMessageRef.current.scrollIntoView({ behavior: "smooth" })
+  //   }
+  useEffect(() => {
+    lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [chatMessages]);
+
   return (
     <div>
       {!submitted &&
@@ -61,6 +70,7 @@ const ChatMessageEngine = () => {
           Thank you for reaching out, our team will get back to you shortly!
         </h2>
       )}
+      <div ref={lastMessageRef} />
     </div>
   );
 };
