@@ -5,13 +5,14 @@ const ChatMessage = ({ message, userSelectionHandler }) => {
   return (
     <div>
       <p className="botMessage">{message.text}</p>
-      {message.responseOptions.map((option) => (
-        <UserResponse
-          key={option.text}
-          option={option}
-          userSelectionHandler={userSelectionHandler}
-        />
-      ))}
+      {message.responseOptions &&
+        message.responseOptions.map((option) => (
+          <UserResponse
+            key={option.text}
+            option={option}
+            userSelectionHandler={userSelectionHandler}
+          />
+        ))}
     </div>
   );
 };
