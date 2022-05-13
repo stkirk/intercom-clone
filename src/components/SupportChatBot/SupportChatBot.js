@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ChatMessageEngine from "./ChatMessageEngine";
+import ChatToggleIcon from "./ChatToggleIcon";
 
 const SupportChatBot = () => {
+  const [displayChat, setDisplayChat] = useState(false);
   return (
     <div className="chatContainer">
-      <ChatMessageEngine />
+      {displayChat && (
+        <div className="chatWindow">
+          <ChatMessageEngine />
+        </div>
+      )}
+      <ChatToggleIcon
+        displayChat={displayChat}
+        setDisplayChat={setDisplayChat}
+      />
     </div>
   );
 };
