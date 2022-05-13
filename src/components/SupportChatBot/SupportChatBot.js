@@ -4,6 +4,7 @@ import ChatToggleIcon from "./ChatToggleIcon";
 
 const SupportChatBot = () => {
   const [displayChat, setDisplayChat] = useState(false);
+
   return (
     <div className="chatContainer">
       {displayChat && (

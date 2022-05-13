@@ -1,8 +1,6 @@
 // message template
 // 0: {messageId: 0, text: "", responseOptions: [{name: "", value: "", text: "", nextMessage: messageData[{name: "", value: "", text: "", nextMessage: ""}]}]},
 
-// MAY GET RID OF messageID property, don't know if we'll need it
-
 export const messageData = {
   initialMessage: {
     inputEmail: false,

@@ -16,7 +16,7 @@ const ChatMessageEngine = () => {
   };
   const [customerData, setCustomerData] = useState(initialCustomerData);
 
-  // chat message flow data controls
+  // chat message data flow controls
   const initialMessage = messageData.initialMessage;
   const [chatMessages, setChatMessages] = useState([initialMessage]);
 
@@ -35,7 +35,7 @@ const ChatMessageEngine = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // mock API call
+    // simulated API call
     axios.post("https://reqres.in/api/users", customerData).then((res) => {
       console.log("request successful!", res.data);
       setCustomerData(initialCustomerData);
