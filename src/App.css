@@ -1,13 +1,31 @@
+/* Landing Page Styles */
 body {
   background-color: whitesmoke;
 }
 
-.landing {
+.landingContent {
   text-align: center;
+  height: 200vh;
+  color: #7a39e0;
 }
 
+h1 {
+  padding: 1%;
+  border-bottom: 2px solid #7a39e0;
+}
+
+footer {
+  background-color: #7a39e0;
+  text-align: center;
+  color: aliceblue;
+  font-weight: 600;
+  height: 20vh;
+  padding-top: 8vh;
+}
+
+/* Chat Styles */
 .chatIcon {
-  position: absolute;
+  position: fixed;
   right: 50px;
   bottom: 50px;
   z-index: 10000;

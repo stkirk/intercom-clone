@@ -2,8 +2,13 @@ import React from "react";
 
 const LandingPage = () => {
   return (
-    <div className="landing">
-      <h1>Landing Page</h1>
+    <div className="landingContainer">
+      <div className="landingContent">
+        <h1>Landing Page</h1>
+      </div>
+      <footer>
+        <h3>Footer</h3>
+      </footer>
     </div>
   );
 };
