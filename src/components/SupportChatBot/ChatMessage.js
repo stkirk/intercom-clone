@@ -13,16 +13,18 @@ const ChatMessage = ({
   return (
     <div>
       <p className="botMessage">{message.text}</p>
-      {message.responseOptions &&
-        message.responseOptions.map((option) => (
-          <UserResponse
-            key={option.text}
-            option={option}
-            userSelectionHandler={userSelectionHandler}
-            disableResponses={disableResponses}
-            setDisableResponses={setDisableResponses}
-          />
-        ))}
+      <div className="responseContainer">
+        {message.responseOptions &&
+          message.responseOptions.map((option) => (
+            <UserResponse
+              key={option.text}
+              option={option}
+              userSelectionHandler={userSelectionHandler}
+              disableResponses={disableResponses}
+              setDisableResponses={setDisableResponses}
+            />
+          ))}
+      </div>
       {message.inputEmail && (
         <EmailForm
           userSelectionHandler={userSelectionHandler}

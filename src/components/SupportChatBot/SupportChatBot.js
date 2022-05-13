@@ -3,7 +3,7 @@ import ChatMessageEngine from "./ChatMessageEngine";
 
 const SupportChatBot = () => {
   return (
-    <div id="chatWindow" className="chatContainer">
+    <div className="chatContainer">
       <ChatMessageEngine />
     </div>
   );

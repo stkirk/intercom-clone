@@ -46,9 +46,7 @@ const ChatMessageEngine = () => {
 
   // auto-scroll to bottom of chat window upon update of chatMessages
   const lastMessageRef = useRef(null);
-  //   const scrollToBottom = () => {
-  //       lastMessageRef.current.scrollIntoView({ behavior: "smooth" })
-  //   }
+
   useEffect(() => {
     lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
   }, [chatMessages]);
@@ -66,7 +64,7 @@ const ChatMessageEngine = () => {
           />
         ))}
       {submitted && (
-        <h2>
+        <h2 className="submitThankYou">
           Thank you for reaching out, our team will get back to you shortly!
         </h2>
       )}

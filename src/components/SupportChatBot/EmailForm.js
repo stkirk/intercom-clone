@@ -11,14 +11,16 @@ const EmailForm = ({ userSelectionHandler, customerData, submitHandler }) => {
 
   return (
     <div className="emailForm">
-      <form onSubmit={onSubmitHelper}>
+      <form className="chatForm" onSubmit={onSubmitHelper}>
         <input
+          className="emailInput"
+          placeholder="Enter your business email"
           type="email"
           name="email"
           value={customerData.email}
           onChange={onChangeHelper}
         />
-        <button>Submit</button>
+        <button className="submitButton">Submit</button>
       </form>
     </div>
   );
